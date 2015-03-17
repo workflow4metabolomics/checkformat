@@ -1,6 +1,4 @@
-####----------------------------------------------------------------------####
-####              Check Format                                  ####
-####----------------------------------------------------------------------####
+Tool: Check Format
 
 I. Date: 2015-03-16
 
@@ -40,4 +38,5 @@ V. Installation
          Wrapper code written in R aimed at launching the checkFormat_script.R given the arguments entered by the user through the Galaxy interface
 
 VI. License
+
 	CeCILL

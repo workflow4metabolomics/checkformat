@@ -30,7 +30,7 @@
 
 .. class:: infomark
 
-**Author** Etienne Thevenot (MetaboHUB, CEA)
+**Author** Etienne Thevenot (W4M Core Development Team, MetaboHUB Paris, CEA)
 
 ---------------------------------------------------
 
@@ -50,7 +50,7 @@ Workflow position
 -----------------
 
 .. image:: ./static/images/metabolomics/checkFormat_workflowPositionImage.png
-        :width: 800
+        :width: 600
 
 
 
