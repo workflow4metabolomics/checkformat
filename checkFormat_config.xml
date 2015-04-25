@@ -1,4 +1,4 @@
-<tool id="checkFormat" name="Check Format" version="2015.03.16">
+<tool id="checkFormat" name="Check Format" version="2015.04.25">
 	<description>Checks the formats of the dataMatrix, sampleMetadata, and variableMetadata files</description>
 
 	<command interpreter="Rscript">
@@ -7,9 +7,6 @@
 			sampleMetadata_in "$sampleMetadata_in"
 			variableMetadata_in "$variableMetadata_in"
 			
-			dataMatrix_out "$dataMatrix_out"
-			sampleMetadata_out "$sampleMetadata_out"
-			variableMetadata_out "$variableMetadata_out"
 			information "$information"
 	</command>
   
@@ -20,9 +17,6 @@
 	</inputs>
 
 	<outputs>
-		<data name="dataMatrix_out" label="${tool.name}_${dataMatrix_in.name}" format="tabular" ></data>
-		<data name="sampleMetadata_out" label="${tool.name}_${sampleMetadata_in.name}" format="tabular" ></data>
-		<data name="variableMetadata_out" label="${tool.name}_${variableMetadata_in.name}" format="tabular" ></data>
 		<data name="information" label="${tool.name}_information.txt" format="txt"/>
 	</outputs>	
 	
@@ -78,18 +72,6 @@ Input files
 Output files
 ------------
 
-dataMatrix_out.tabular
-	| dataMatrix data file identical to the file given as argument
-	| 
-	
-sampleMetadata_out.tabular
-	| sampleMetadata file identical to the file given as argument
-	| 
-	
-variableMetadata_out.tabular
-	| variableMetadata file identical to the file given as argument
-	| 
-			
 information.txt
 	| Text file with all messages when error(s) in formats are detected
 	|

@@ -28,10 +28,7 @@ if(rssVsGalL) { ## for running with R outside the Galaxy environment during deve
     exaDirOutC <- gsub("input", "output", exaDirInpC)
 
     argLs <- c(argLs,
-               list(dataMatrix_out = file.path(exaDirOutC, "dataMatrix.tsv"),
-                    sampleMetadata_out = file.path(exaDirOutC, "sampleMetadata.tsv"),
-                    variableMetadata_out = file.path(exaDirOutC, "variableMetadata.tsv"),
-                    information = file.path(exaDirOutC, "information.txt")))
+               list(information = file.path(exaDirOutC, "information.txt")))
 
     stopifnot(file.exists(exaDirOutC))
 
@@ -71,9 +68,6 @@ cat("\nStart of the '", modNamC, "' Galaxy module call: ",
 resLs <- readAndCheckF(argLs[["dataMatrix_in"]],
                        argLs[["sampleMetadata_in"]],
                        argLs[["variableMetadata_in"]])
-datMN <- resLs[["datMN"]]
-samDF <- resLs[["samDF"]]
-varDF <- resLs[["varDF"]]
 chkL <- resLs[["chkL"]]
 
 
@@ -83,30 +77,6 @@ chkL <- resLs[["chkL"]]
 
 
 if(chkL) {
-
-    datDF <- cbind.data.frame(dataMatrix = colnames(datMN),
-                              as.data.frame(t(datMN)))
-    write.table(datDF,
-                file = argLs[["dataMatrix_out"]],
-                quote = FALSE,
-                row.names = FALSE,
-                sep = "\t")
-
-    samDF <- cbind.data.frame(sampleMetadata = rownames(samDF),
-                              samDF)
-    write.table(samDF,
-                file = argLs[["sampleMetadata_out"]],
-                quote = FALSE,
-                row.names = FALSE,
-                sep = "\t")
-
-    varDF <- cbind.data.frame(variableMetadata = rownames(varDF),
-                              varDF)
-    write.table(varDF,
-                file = argLs[["variableMetadata_out"]],
-                quote = FALSE,
-                row.names = FALSE,
-                sep = "\t")
 
     cat("\nTable formats are OK; enjoy your analyses!\n", sep="")
 

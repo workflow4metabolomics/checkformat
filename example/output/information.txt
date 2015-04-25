@@ -1,5 +1,6 @@
 
-Start of the 'Check Format' Galaxy module call: sam. 21 mars 2015 21:18:17
-Sourced file 'c:/Users/et207099/Documents/a_travail/a_biomathematic/project/dev/w4m_checkFormat/checkFormat_script.R'
+Start of the 'Check Format' Galaxy module call: sam. 25 avr. 2015 09:26:20
+
 Table formats are OK; enjoy your analyses!
-End of the 'Check Format' Galaxy module call: sam. 21 mars 2015 21:18:49
+
+End of the 'Check Format' Galaxy module call: sam. 25 avr. 2015 09:26:29
