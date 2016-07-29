@@ -1,4 +1,4 @@
-<tool id="checkFormat" name="Check Format" version="2015.04.25">
+<tool id="checkFormat" name="Check Format" version="2.0.0">
 	<description>Checks the formats of the dataMatrix, sampleMetadata, and variableMetadata files</description>
 
 	<command interpreter="Rscript">
