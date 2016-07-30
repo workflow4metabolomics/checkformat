@@ -1,6 +1,0 @@
-
-Start of the 'Check Format' Galaxy module call: sam. 25 avr. 2015 09:26:20
-
-Table formats are OK; enjoy your analyses!
-
-End of the 'Check Format' Galaxy module call: sam. 25 avr. 2015 09:26:29
