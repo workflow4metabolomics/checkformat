@@ -1,14 +1,19 @@
 <tool id="checkFormat" name="Check Format" version="2.0.2">
 	<description>Checks the formats of the dataMatrix, sampleMetadata, and variableMetadata files</description>
 
-	<command interpreter="Rscript">
-	   checkFormat_wrapper.R
-			dataMatrix_in "$dataMatrix_in"
+	<requirements>
+	  <requirement type="package" version="3.2.2">R</requirement>
+	  <requirement type="package">r-batch</requirement>
+	</requirements>
+
+	<command><![CDATA[
+	Rscript $__tool_directory__/checkFormat_wrapper.R
+            dataMatrix_in "$dataMatrix_in"
 			sampleMetadata_in "$sampleMetadata_in"
 			variableMetadata_in "$variableMetadata_in"
 			
 			information "$information"
-	</command>
+	]]></command>    
   
 	<inputs>
 		<param name="dataMatrix_in" type="data" label="Data matrix file" help="" format="tabular" />
@@ -26,6 +31,14 @@
 
 **Author** Etienne Thevenot (W4M Core Development Team, MetaboHUB Paris, CEA)
 
+---------------------------------------------------
+
+.. class:: infomark
+
+**Tool updates**
+
+See the **NEWS** section at the bottom of this page
+  
 ---------------------------------------------------
 
 ========================
@@ -78,6 +91,32 @@ information.txt
 
 ---------------------------------------------------
 
+---------------
+Working example
+---------------
+
+.. class:: infomark
+
+See the **W4M00001a_sacurine-subset-statistics**, **W4M00001b_sacurine-complete**, **W4M00002_mtbls2**, or **W4M00003_diaplasma** shared histories in the **Shared Data/Published Histories** menu
+
+---------------------------------------------------
+
+----
+NEWS
+----
+
+CHANGES IN VERSION 2.0.2
+========================
+
+INTERNAL MODIFICATIONS
+
+Test for R code
+Planemo running validation
+Planemo installing validation
+Travis automated testing
+Toolshed export
+
+  </help>
 ---------------
 Working example
 ---------------
@@ -142,7 +181,5 @@ Input files
 	HMDB01032        Dehydroepiandrosterone sulfate
 	HMDB03072        Quinic acid
 	HMDB00792        Sebacic acid
-
-  </help>
   
 </tool>
