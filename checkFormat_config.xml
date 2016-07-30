@@ -117,6 +117,24 @@ Travis automated testing
 Toolshed export
 
   </help>
+  
+  <citations>
+    <citation type="bibtex">@Article{Thevenot2015,
+    Title                    = {Analysis of the human adult urinary metabolome variations with age, body mass index and gender by implementing a comprehensive workflow for univariate and OPLS statistical analyses},
+    Author                   = {Thévenot, Etienne A. and Roux, Aurélie and Xu, Ying and Ezan, Eric and Junot, Christophe},
+    Journal                  = {Journal of Proteome Research},
+    Year                     = {2015},
+    Note                     = {PMID: 26088811},
+    Number                   = {8},
+    Pages                    = {3322-3335},
+    Volume                   = {14},
+    
+    Doi                      = {10.1021/acs.jproteome.5b00354},
+    Url                      = {http://pubs.acs.org/doi/full/10.1021/acs.jproteome.5b00354}
+    }</citation>
+    
+  </citations>
+    
 ---------------
 Working example
 ---------------
