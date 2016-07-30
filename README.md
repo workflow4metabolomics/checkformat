@@ -1,6 +1,8 @@
 ## Checking the formats of the dataMatrix, sampleMetadata, and variableMetadata files  
 #### A Galaxy module from the [Workflow4metabolomics](http://workflow4metabolomics.org) project
 
+Status: [![Build Status](https://travis-ci.org/workflow4metabolomics/checkformat.svg?branch=master)](https://travis-ci.org/workflow4metabolomics/checkformat).
+
 ### Description
 
 **Version:** 2.0.2  
