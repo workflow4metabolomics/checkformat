@@ -1,6 +1,6 @@
 <project name="checkformat" default="all">
 
-	<property name="tool.xml" value="checkformat_config.xml"/>
+	<property name="tool.xml" value="checkFormat_config.xml"/>
 	<property name="conda.dir" value="${user.home}/w4m-conda"/>
 
 	<!--~~~
