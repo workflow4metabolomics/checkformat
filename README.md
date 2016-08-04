@@ -5,7 +5,7 @@ Status: [![Build Status](https://travis-ci.org/workflow4metabolomics/checkformat
 
 ### Description
 
-**Version:** 2.0.2  
+**Version:** 2.0.4  
 **Date:** 2016-07-29  
 **Author:** Etienne A. Thevenot (CEA, LIST, MetaboHUB, W4M Core Development Team)   
 **Email:** [etienne.thevenot(at)cea.fr](mailto:etienne.thevenot@cea.fr)  
@@ -30,6 +30,14 @@ Status: [![Build Status](https://travis-ci.org/workflow4metabolomics/checkformat
 The code in the wrapper can be tested by running the **tests/checkFormat_tests.R** in R  
 
 ### News
+
+##### CHANGES IN VERSION 2.0.4 
+
+INTERNAL MODIFICATION  
+
+    o Minor internal modifications  
+    
+***
 
 ##### CHANGES IN VERSION 2.0.2  
 

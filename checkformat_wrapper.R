@@ -1,4 +1,4 @@
-#!/usr/bin/Rscript --vanilla --slave --no-site-file
+#!/usr/bin/env Rscript
 
 library(batch) ## parseCommandArgs
 
@@ -8,7 +8,7 @@ source_local <- function(fname){
     source(paste(base_dir, fname, sep="/"))
 }
 
-source_local("checkFormat_script.R")
+source_local("checkformat_script.R")
 
 argVc <- unlist(parseCommandArgs(evaluate = FALSE))
 

@@ -1,13 +1,17 @@
-<tool id="checkFormat" name="Check Format" version="2.0.2">
+<tool id="checkFormat" name="Check Format" version="2.0.4">
   <description>Checks the formats of the dataMatrix, sampleMetadata, and variableMetadata files</description>
   
   <requirements>
     <requirement type="package" version="3.2.2">R</requirement>
     <requirement type="package">r-batch</requirement>
   </requirements>
+
+  <stdio>
+    <exit_code range="1:" level="fatal" />
+  </stdio>
   
   <command><![CDATA[
-  Rscript $__tool_directory__/checkFormat_wrapper.R
+  Rscript $__tool_directory__/checkformat_wrapper.R
   dataMatrix_in "$dataMatrix_in"
   sampleMetadata_in "$sampleMetadata_in"
   variableMetadata_in "$variableMetadata_in"
@@ -113,6 +117,13 @@ See the **W4M00001a_sacurine-subset-statistics**, **W4M00001b_sacurine-complete*
 ----
 NEWS
 ----
+
+CHANGES IN VERSION 2.0.4
+========================
+
+INTERNAL MODIFICATIONS
+
+Minor internal modifications
     
 CHANGES IN VERSION 2.0.2
 ========================
@@ -141,8 +152,10 @@ Toolshed export
     Doi                      = {10.1021/acs.jproteome.5b00354},
     Url                      = {http://pubs.acs.org/doi/full/10.1021/acs.jproteome.5b00354}
     }</citation>
-    
+    <citation type="doi">10.1093/bioinformatics/btu813</citation>
   </citations>
+
+
   
   ---------------
   Working example
@@ -208,5 +221,6 @@ Toolshed export
   HMDB01032        Dehydroepiandrosterone sulfate
   HMDB03072        Quinic acid
   HMDB00792        Sebacic acid
+
   
 </tool>
