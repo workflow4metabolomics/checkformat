@@ -1,2 +1,7 @@
-archive/
-tests/output/
+runit/output/
+tool_test_output.*
+.#*
+\#*#
+*~
+.swp
+.*.swp

@@ -1,5 +1,7 @@
-## Checking the formats of the dataMatrix, sampleMetadata, and variableMetadata files  
-#### A Galaxy module from the [Workflow4metabolomics](http://workflow4metabolomics.org) project
+Checking the formats of the dataMatrix, sampleMetadata, and variableMetadata files  
+==================================================================================
+
+A Galaxy module from the [Workflow4metabolomics](http://workflow4metabolomics.org) infrastructure  
 
 Status: [![Build Status](https://travis-ci.org/workflow4metabolomics/checkformat.svg?branch=master)](https://travis-ci.org/workflow4metabolomics/checkformat).
 
@@ -18,16 +20,28 @@ Status: [![Build Status](https://travis-ci.org/workflow4metabolomics/checkformat
 
 ### Installation
 
-* Configuration file: **checkFormat_config.xml**
-* Image file: **static/images/checkFormat_workflowPositionImage.png**   
-* Wrapper file: **checkFormat_wrapper.R**  
+* Configuration file: `checkformat_config.xml`
+* Image file: `static/images/checkformat_workflowPositionImage.png`   
+* Wrapper file: `checkformat_wrapper.R`  
 * R packages  
-    + **batch** from CRAN  
-> install.packages("batch", dep=TRUE)   
+    + **batch** from CRAN
+ 
+    ```r
+    install.packages("batch", dep=TRUE)  
+    ```
 
 ### Tests
 
-The code in the wrapper can be tested by running the **tests/checkFormat_tests.R** in R  
+The code in the wrapper can be tested by running the `runit/checkformat_tests.R` R file
+
+You will need to install **RUnit** package in order to make it run:
+```r
+install.packages('RUnit', dependencies = TRUE)
+```
+
+### Working example
+
+See the **W4M00001a_sacurine-subset-statistics**, **W4M00001b_sacurine-complete**, **W4M00002_mtbls2**, or **W4M00003_diaplasma** shared histories in the **Shared Data/Published Histories** menu (https://galaxy.workflow4metabolomics.org/history/list_published)
 
 ### News
 
@@ -35,14 +49,10 @@ The code in the wrapper can be tested by running the **tests/checkFormat_tests.R
 
 INTERNAL MODIFICATION  
 
-    o Minor internal modifications  
-    
-***
+ * Minor internal modifications  
 
 ##### CHANGES IN VERSION 2.0.2  
 
 INTERNAL MODIFICATION  
 
-    o Creating tests for R code  
-    
-***
+ * Creating tests for R code  
