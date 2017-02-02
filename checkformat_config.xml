@@ -2,7 +2,6 @@
   <description>Checks the formats of the dataMatrix, sampleMetadata, and variableMetadata files</description>
   
   <requirements>
-    <requirement type="package" version="3.2.2">R</requirement>
     <requirement type="package">r-batch</requirement>
   </requirements>
 
