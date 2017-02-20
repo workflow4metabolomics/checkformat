@@ -153,12 +153,11 @@ Toolshed export
     }</citation>
     <citation type="doi">10.1093/bioinformatics/btu813</citation>
   </citations>
-
-  <!--
+<!--
   
-  ---------------
+  
   Working example
-  ---------------
+  
   
   
   Input files
@@ -220,7 +219,6 @@ Toolshed export
   HMDB01032        Dehydroepiandrosterone sulfate
   HMDB03072        Quinic acid
   HMDB00792        Sebacic acid
-
-  -->  
+-->  
 
 </tool>
