@@ -1,10 +1,10 @@
 before_install:
+ - export GALAXY_RELEASE=release_17.01
+ - export PLANEMO_RELEASE=0.37.0
+
+install:
  - sudo apt-get install -y ant
- - sudo apt-get install -y python-virtualenv
- - virtualenv planemo-venv
- - . planemo-venv/bin/activate
- - pip install --upgrade pip setuptools
- - pip install planemo
+ - pip install planemo==$PLANEMO_RELEASE
 
 script:
  - ant test
