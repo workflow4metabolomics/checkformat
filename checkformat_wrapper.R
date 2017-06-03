@@ -60,9 +60,31 @@ if(chkL) {
     cat("\nEnd of the '", modNamC, "' Galaxy module call: ",
         format(Sys.time(), "%a %d %b %Y %X"), "\n", sep="")
 
+    cat("\n\n\n============================================================================")
+cat("\nAdditional information about the call:\n")
+cat("\n1) Parameters:\n")
+print(cbind(value = argVc))
+
+cat("\n2) Session Info:\n")
+
+print(sessionInfo())
+
+cat("============================================================================\n")
+
     sink()
 
 } else {
+
+    cat("\n\n\n============================================================================")
+cat("\nAdditional information about the call:\n")
+cat("\n1) Parameters:\n")
+print(cbind(value = argVc))
+
+cat("\n2) Session Info:\n")
+
+print(sessionInfo())
+
+cat("============================================================================\n")
 
     sink()
     stop("Please check the generated 'information' file")
