@@ -2,7 +2,6 @@
   <description>Checks the formats of the dataMatrix, sampleMetadata, and variableMetadata files</description>
   
   <requirements>
-    <requirement type="package" version="3.2.2">R</requirement>
     <requirement type="package">r-batch</requirement>
   </requirements>
 
@@ -154,12 +153,11 @@ Toolshed export
     }</citation>
     <citation type="doi">10.1093/bioinformatics/btu813</citation>
   </citations>
-
-
+<!--
   
-  ---------------
+  
   Working example
-  ---------------
+  
   
   
   Input files
@@ -221,6 +219,6 @@ Toolshed export
   HMDB01032        Dehydroepiandrosterone sulfate
   HMDB03072        Quinic acid
   HMDB00792        Sebacic acid
+-->  
 
-  
 </tool>
