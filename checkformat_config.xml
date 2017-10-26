@@ -33,7 +33,11 @@
       <param name="dataMatrix_in" value="input-dataMatrix.tsv"/>
       <param name="sampleMetadata_in" value="input-sampleMetadata.tsv"/>
       <param name="variableMetadata_in" value="input-variableMetadata.tsv"/>
-      <output name="information" file="output-information.txt" lines_diff="4"/>  
+      <output name="information">
+          <assert_contents>
+              <has_text text="Table formats are OK; enjoy your analyses!" />
+          </assert_contents>
+      </output>
     </test>
   </tests>
   
