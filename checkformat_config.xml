@@ -33,11 +33,15 @@
       <param name="dataMatrix_in" value="input-dataMatrix.tsv"/>
       <param name="sampleMetadata_in" value="input-sampleMetadata.tsv"/>
       <param name="variableMetadata_in" value="input-variableMetadata.tsv"/>
-      <output name="information" file="output-information.txt" lines_diff="4"/>  
+      <output name="information">
+          <assert_contents>
+              <has_text text="Table formats are OK; enjoy your analyses!" />
+          </assert_contents>
+      </output>
     </test>
   </tests>
   
-  <help>
+  <help><![CDATA[
     
 .. class:: infomark
     
@@ -53,9 +57,9 @@ See the **NEWS** section at the bottom of this page
     
 ---------------------------------------------------
     
-========================
+============
 Check Format
-========================
+============
     
 -----------
 Description
@@ -69,9 +73,7 @@ Workflow position
 -----------------
     
 .. image:: ./static/images/checkFormat_workflowPositionImage.png
-:width: 600
-    
-    
+
     
 -----------
 Input files
@@ -86,20 +88,18 @@ Input files
 +----------------------------+---------+
 | 3 : Variable metadata file | tabular |
 +----------------------------+---------+
-    
-|
+
 | **Required formats for the dataMatrix, sampleMetadata, and variableMetadata files are**
 | **described in the HowTo entitled 'Format Data For Postprocessing' available on the**
 | **main page of Workflow4Metabolomics.org**
-|
     
 ------------
 Output files
 ------------
     
 information.txt
+
 | Text file with all messages when error(s) in formats are detected
-|
     
 ---------------------------------------------------
     
@@ -135,7 +135,7 @@ Planemo installing validation
 Travis automated testing
 Toolshed export
     
-  </help>
+  ]]></help>
   
   <citations>
     <citation type="bibtex">@Article{Thevenot2015,
