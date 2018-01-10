@@ -27,6 +27,8 @@ test_datSamInv <- function() {
 test_datSamFls <- function() {
 
     ## first sample name in dataMatrix is 17, and in sampleMetadata is X17
+
+    ## also used in test-data
     
     testDirC <- "datSamFls"
     argLs <- list(makeNameL = TRUE)
@@ -38,7 +40,7 @@ test_datSamFls <- function() {
     
     checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
 
-    checkEquals(rownames(outLs[['samDF']])[1], 'X17')
+    checkEquals(rownames(outLs[['datMN']])[1], 'X17')
 
 }
 

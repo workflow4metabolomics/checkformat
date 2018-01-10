@@ -1,9 +1,9 @@
 
-Start of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 06:46:50 PM
+Start of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 07:07:28 PM
 
 The input tables have a correct format and can be used for your analyses
 
-End of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 06:46:50 PM
+End of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 07:07:28 PM
 
 
 

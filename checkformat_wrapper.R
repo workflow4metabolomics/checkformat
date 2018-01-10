@@ -45,7 +45,7 @@ cat("\nStart of the '", modNamC, "' Galaxy module call: ",
 resLs <- readAndCheckF(argVc["dataMatrix_in"],
                        argVc["sampleMetadata_in"],
                        argVc["variableMetadata_in"],
-                       argVc["makeNameL"])
+                       as.logical(argVc["makeNameL"]))
 
 
 ##------------------------------

@@ -1,4 +1,5 @@
 runit/output/
+runit/output/information.txt
 tool_test_output.*
 .#*
 \#*#
