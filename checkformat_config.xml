@@ -51,7 +51,7 @@
 	    <has_text text="Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses" />
           </assert_contents>
       </output>
-      <output name="dataMatrix_out" file="output-dataMatrix.tsv"/>
+      <!-- <output name="dataMatrix_out" file="output-dataMatrix.tsv"/> -->
     </test>
   </tests>
   
@@ -131,6 +131,13 @@ See the **W4M00001a_sacurine-subset-statistics**, **W4M00001b_sacurine-complete*
 NEWS
 ----
 
+CHANGES IN VERSION 2.1.0
+========================
+
+NEW FEATURES
+
+Minor internal modifications
+
 CHANGES IN VERSION 2.0.4
 ========================
 
@@ -152,19 +159,8 @@ Toolshed export
   ]]></help>
   
   <citations>
-    <citation type="bibtex">@Article{Thevenot2015,
-    Title                    = {Analysis of the human adult urinary metabolome variations with age, body mass index and gender by implementing a comprehensive workflow for univariate and OPLS statistical analyses},
-    Author                   = {Thévenot, Etienne A. and Roux, Aurélie and Xu, Ying and Ezan, Eric and Junot, Christophe},
-    Journal                  = {Journal of Proteome Research},
-    Year                     = {2015},
-    Note                     = {PMID: 26088811},
-    Number                   = {8},
-    Pages                    = {3322-3335},
-    Volume                   = {14},
-    
-    Doi                      = {10.1021/acs.jproteome.5b00354},
-    Url                      = {http://pubs.acs.org/doi/full/10.1021/acs.jproteome.5b00354}
-    }</citation>
+    <citation type="doi">10.1021/acs.jproteome.5b00354</citation>
+    <citation type="doi">10.1016/j.biocel.2017.07.002</citation>
     <citation type="doi">10.1093/bioinformatics/btu813</citation>
   </citations>
 <!--
