@@ -1,9 +1,9 @@
 
-Start of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 11:24:27 AM
+Start of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 05:16:26 PM
 
-Table formats are OK; enjoy your analyses!
+The input tables have a correct format and can be used for your analyses
 
-End of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 11:24:27 AM
+End of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 05:16:27 PM
 
 
 
@@ -11,11 +11,15 @@ End of the 'Check Format' Galaxy module call: Wed 10 Jan 2018 11:24:27 AM
 Additional information about the call:
 
 1) Parameters:
-                    value                         
-dataMatrix_in       "./input/dataMatrix.tsv"      
-sampleMetadata_in   "./input/sampleMetadata.tsv"  
-variableMetadata_in "./input/variableMetadata.tsv"
-information         "./output/information.txt"    
+                     value                          
+dataMatrix_in        "./input/dataMatrix.tsv"       
+sampleMetadata_in    "./input/sampleMetadata.tsv"   
+variableMetadata_in  "./input/variableMetadata.tsv" 
+dataMatrix_out       "./output/dataMatrix.tsv"      
+sampleMetadata_out   "./output/sampleMetadata.tsv"  
+variableMetadata_out "./output/variableMetadata.tsv"
+information          "./output/information.txt"     
+makeNameL            "FALSE"                        
 
 2) Session Info:
 R version 3.3.1 (2016-06-21) 

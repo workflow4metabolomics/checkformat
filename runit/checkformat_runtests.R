@@ -82,6 +82,9 @@ defaultArgF <- function(testInDirC) {
     if(file.exists(file.path(dirname(scriptPathC), testInDirC, "variableMetadata.tsv")))
         defaultArgLs[["variableMetadata_in"]] <- file.path(dirname(scriptPathC), testInDirC, "variableMetadata.tsv")
 
+    defaultArgLs[["dataMatrix_out"]] <- file.path(dirname(scriptPathC), testOutDirC, "dataMatrix.tsv")
+    defaultArgLs[["sampleMetadata_out"]] <- file.path(dirname(scriptPathC), testOutDirC, "sampleMetadata.tsv")
+    defaultArgLs[["variableMetadata_out"]] <- file.path(dirname(scriptPathC), testOutDirC, "variableMetadata.tsv")
     defaultArgLs[["information"]] <- file.path(dirname(scriptPathC), testOutDirC, "information.txt")
 
     defaultArgLs

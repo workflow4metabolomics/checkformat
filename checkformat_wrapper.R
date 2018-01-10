@@ -44,8 +44,8 @@ cat("\nStart of the '", modNamC, "' Galaxy module call: ",
 
 resLs <- readAndCheckF(argVc["dataMatrix_in"],
                        argVc["sampleMetadata_in"],
-                       argVc["variableMetadata_in"])
-chkL <- resLs[["chkL"]]
+                       argVc["variableMetadata_in"],
+                       argVc["makeNameL"])
 
 
 ##------------------------------
@@ -53,51 +53,81 @@ chkL <- resLs[["chkL"]]
 ##------------------------------
 
 
-if(chkL) {
+## dataMatrix
 
-    cat("\nTable formats are OK; enjoy your analyses!\n", sep="")
+datMN <- resLs[["datMN"]]
+datDF <- cbind.data.frame(dataMatrix = colnames(datMN),
+                          as.data.frame(t(datMN)))
+write.table(datDF,
+            file = argVc[["dataMatrix_out"]],
+            quote = FALSE,
+            row.names = FALSE,
+            sep = "\t")
 
-    cat("\nEnd of the '", modNamC, "' Galaxy module call: ",
-        format(Sys.time(), "%a %d %b %Y %X"), "\n", sep="")
+## sampleMetadata
 
-    cat("\n\n\n============================================================================")
-    cat("\nAdditional information about the call:\n")
-    cat("\n1) Parameters:\n")
-    print(cbind(value = argVc))
-    
-    cat("\n2) Session Info:\n")
-    sessioninfo <- sessionInfo()
-    cat(sessioninfo$R.version$version.string,"\n")
-    cat("Main packages:\n")
-    for (pkg in names(sessioninfo$otherPkgs)) { cat(paste(pkg,packageVersion(pkg)),"\t") }; cat("\n")
-    cat("Other loaded packages:\n")
-    for (pkg in names(sessioninfo$loadedOnly)) { cat(paste(pkg,packageVersion(pkg)),"\t") }; cat("\n")
-    
-    cat("============================================================================\n")
-    
-    sink()
-    
+samDF <- resLs[["samDF"]]
+samDF <- cbind.data.frame(sampleMetadata = rownames(samDF),
+                          samDF)
+write.table(samDF,
+            file = argVc["sampleMetadata_out"],
+            quote = FALSE,
+            row.names = FALSE,
+            sep = "\t")
+
+## variableMetadata
+
+varDF <- resLs[["varDF"]]
+varDF <- cbind.data.frame(variableMetadata = rownames(varDF),
+                          varDF)
+write.table(varDF,
+            file = argVc["variableMetadata_out"],
+            quote = FALSE,
+            row.names = FALSE,
+            sep = "\t")
+
+if(resLs[["chkL"]]) {
+
+    if(resLs[["newL"]]) {
+        
+        cat("\nThe sample and/or variable names or orders from the input tables have been modified; please use the output tables (which have a correct format) for your analyses\n")
+        
+    } else {
+
+        cat("\nThe input tables have a correct format and can be used for your analyses\n")
+        
+    }
+
 } else {
-    
-    cat("\n\n\n============================================================================")
-    cat("\nAdditional information about the call:\n")
-    cat("\n1) Parameters:\n")
-    print(cbind(value = argVc))
-    
-    cat("\n2) Session Info:\n")
-    sessioninfo <- sessionInfo()
-    cat(sessioninfo$R.version$version.string,"\n")
-    cat("Main packages:\n")
-    for (pkg in names(sessioninfo$otherPkgs)) { cat(paste(pkg,packageVersion(pkg)),"\t") }; cat("\n")
-    cat("Other loaded packages:\n")
-    for (pkg in names(sessioninfo$loadedOnly)) { cat(paste(pkg,packageVersion(pkg)),"\t") }; cat("\n")
-    
-    cat("============================================================================\n")
 
-    sink()
-    stop("Please check the generated 'information' file")
+    cat("\nPlease check the messages above to correct the format(s)\n")
 
 }
+    
+cat("\nEnd of the '", modNamC, "' Galaxy module call: ",
+    format(Sys.time(), "%a %d %b %Y %X"), "\n", sep="")
+
+cat("\n\n\n============================================================================")
+cat("\nAdditional information about the call:\n")
+cat("\n1) Parameters:\n")
+print(cbind(value = argVc))
+
+cat("\n2) Session Info:\n")
+sessioninfo <- sessionInfo()
+cat(sessioninfo$R.version$version.string,"\n")
+cat("Main packages:\n")
+for (pkg in names(sessioninfo$otherPkgs)) { cat(paste(pkg,packageVersion(pkg)),"\t") }; cat("\n")
+cat("Other loaded packages:\n")
+for (pkg in names(sessioninfo$loadedOnly)) { cat(paste(pkg,packageVersion(pkg)),"\t") }; cat("\n")
+
+cat("============================================================================\n")
+
+sink()
+
+if(!resLs[["chkL"]]) {
+    stop("Please check the generated 'information' file")
+}
+
 
 ## closing
 ##--------
