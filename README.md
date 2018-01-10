@@ -7,8 +7,8 @@ Status: [![Build Status](https://travis-ci.org/workflow4metabolomics/checkformat
 
 ### Description
 
-**Version:** 2.0.4  
-**Date:** 2016-07-29  
+**Version:** 3.0.0  
+**Date:** 2018-01-10  
 **Author:** Etienne A. Thevenot (CEA, LIST, MetaboHUB, W4M Core Development Team)   
 **Email:** [etienne.thevenot(at)cea.fr](mailto:etienne.thevenot@cea.fr)  
 **Citation:** Thevenot E.A., Roux A., Xu Y., Ezan E. and Junot C. (2015). Analysis of the human adult urinary metabolome variations with age, body mass index and gender by implementing a comprehensive workflow for univariate and OPLS statistical analyses. *Journal of Proteome Research*, **14**:3322-3335. [doi:10.1021/acs.jproteome.5b00354](http://dx.doi.org/10.1021/acs.jproteome.5b00354)  
@@ -45,6 +45,16 @@ See the **W4M00001a_sacurine-subset-statistics**, **W4M00001b_sacurine-complete*
 
 ### News
 
+##### CHANGES IN VERSION 3.0.0  
+
+NEW FEATURES  
+
+ * Automated re-ordering (if necessary) of sample and/or variable names from dataMatrix based on sampleMetadata and variableMetadata  
+
+ * New argument to make sample and variable names syntactically valid  
+
+ * Output of dataMatrix, sampleMetadata, and variableMetadata files, whether they have been modified or not  
+  
 ##### CHANGES IN VERSION 2.0.4 
 
 INTERNAL MODIFICATION  
