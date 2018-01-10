@@ -9,3 +9,85 @@ test_input_default <- function() {
     checkEquals(outLs[['infVc']][4], 'The input tables have a correct format and can be used for your analyses')
 
 }
+
+test_datSamInv <- function() {
+
+    ## first two samples inverted in dataMatrix
+    
+    testDirC <- "datSamInv"
+    argLs <- list(makeNameL = FALSE)
+
+    argLs <- c(defaultArgF(testDirC), argLs)
+    outLs <- wrapperCallF(argLs)
+
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+
+}
+
+test_datSamFls <- function() {
+
+    ## first sample name in dataMatrix is 17, and in sampleMetadata is X17
+    
+    testDirC <- "datSamFls"
+    argLs <- list(makeNameL = TRUE)
+
+    argLs <- c(defaultArgF(testDirC), argLs)
+    outLs <- wrapperCallF(argLs)
+
+    checkEquals(outLs[['infVc']][5], 'Message: Converting sample and variable names to the standard R format')
+    
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+
+    checkEquals(rownames(outLs[['samDF']])[1], 'X17')
+
+}
+
+test_datSamFlsInv <- function() {
+
+    ## first sample name in dataMatrix is X17, and in sampleMetadata is 17
+    
+    testDirC <- "datSamFlsInv"
+    argLs <- list(makeNameL = TRUE)
+
+    argLs <- c(defaultArgF(testDirC), argLs)
+    outLs <- wrapperCallF(argLs)
+
+    checkEquals(outLs[['infVc']][5], 'Message: Converting sample and variable names to the standard R format')
+    
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+
+    checkEquals(rownames(outLs[['samDF']])[1], 'X17')
+
+}
+
+test_datVarInv <- function() {
+
+    ## first two variables inverted in variableMetadata
+    
+    testDirC <- "datVarInv"
+    argLs <- list(makeNameL = FALSE)
+
+    argLs <- c(defaultArgF(testDirC), argLs)
+    outLs <- wrapperCallF(argLs)
+
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+
+}
+
+test_datVarFls <- function() {
+
+    ## second variable name in dataMatrix is 3072, and in variableMetadata is X3072
+    
+    testDirC <- "datVarFls"
+    argLs <- list(makeNameL = TRUE)
+
+    argLs <- c(defaultArgF(testDirC), argLs)
+    outLs <- wrapperCallF(argLs)
+
+    checkEquals(outLs[['infVc']][5], 'Message: Converting sample and variable names to the standard R format')
+    
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+
+    checkEquals(colnames(outLs[['datMN']])[2], 'X3072')
+
+}

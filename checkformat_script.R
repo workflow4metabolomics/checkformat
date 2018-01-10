@@ -128,12 +128,14 @@ readAndCheckF <- function(datFilC="dataMatrix.tsv",
 
             cat("\n\nMessage: Re-ordering dataMatrix sample names to match sampleMetadata\n")
             datMN <- datMN[rownames(samDF), , drop = FALSE]
+            
+            stopifnot(identical(sort(rownames(datMN)), sort(rownames(samDF))))
 
             newL <- TRUE
             
         }  else {
             
-            cat("\n\nStop: The sample names of dataMatrix and sampleMetadata do not match\n")
+            cat("\n\nStop: The sample names of dataMatrix and sampleMetadata do not match:\n")
             print(cbind.data.frame(indice = 1:nrow(datMN),
                                    dataMatrix=rownames(datMN),
                                    sampleMetadata=rownames(samDF))[rownames(datMN) != rownames(samDF), , drop = FALSE])
@@ -150,11 +152,13 @@ readAndCheckF <- function(datFilC="dataMatrix.tsv",
             cat("\n\nMessage: Re-ordering dataMatrix variable names to match variableMetadata\n")
             datMN <- datMN[, rownames(varDF), drop = FALSE]
 
+            stopifnot(identical(sort(colnames(datMN)), sort(rownames(varDF))))
+
             newL <- TRUE
             
         }  else {
             
-            cat("\n\nStop: The variable names of dataMatrix and variableMetadata do not match\n")
+            cat("\n\nStop: The variable names of dataMatrix and variableMetadata do not match:\n")
             print(cbind.data.frame(indice = 1:ncol(datMN),
                                    dataMatrix=colnames(datMN),
                                    variableMetadata=rownames(varDF))[colnames(datMN) != rownames(varDF), , drop = FALSE])
