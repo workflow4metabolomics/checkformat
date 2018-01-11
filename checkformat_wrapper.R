@@ -90,11 +90,11 @@ if(resLs[["chkL"]]) {
 
     if(resLs[["newL"]]) {
         
-        cat("\nWarning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses\n")
+        cat("\nWarning: The sample and/or variable names or orders from the input tables have been modified\n(see the information file for details); please use the new output tables for your analyses.\n")
         
     } else {
 
-        cat("\nThe input tables have a correct format and can be used for your analyses\n")
+        cat("\nThe input tables have a correct format and can be used for your analyses.\n")
         
     }
 
