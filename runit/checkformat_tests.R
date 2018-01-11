@@ -6,7 +6,7 @@ test_input_default <- function() {
     argLs <- c(defaultArgF(testDirC), argLs)
     outLs <- wrapperCallF(argLs)
 
-    checkEquals(outLs[['infVc']][4], 'The input tables have a correct format and can be used for your analyses')
+    checkEquals(outLs[['infVc']][4], 'The input tables have a correct format and can be used for your analyses.')
 
 }
 
@@ -20,7 +20,7 @@ test_datSamInv <- function() {
     argLs <- c(defaultArgF(testDirC), argLs)
     outLs <- wrapperCallF(argLs)
 
-    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified')
 
 }
 
@@ -38,7 +38,7 @@ test_datSamFls <- function() {
 
     checkEquals(outLs[['infVc']][5], 'Message: Converting sample and variable names to the standard R format')
     
-    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified')
 
     checkEquals(rownames(outLs[['datMN']])[1], 'X17')
 
@@ -56,7 +56,7 @@ test_datSamFlsInv <- function() {
 
     checkEquals(outLs[['infVc']][5], 'Message: Converting sample and variable names to the standard R format')
     
-    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified')
 
     checkEquals(rownames(outLs[['samDF']])[1], 'X17')
 
@@ -72,7 +72,7 @@ test_datVarInv <- function() {
     argLs <- c(defaultArgF(testDirC), argLs)
     outLs <- wrapperCallF(argLs)
 
-    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified')
 
 }
 
@@ -88,7 +88,7 @@ test_datVarFls <- function() {
 
     checkEquals(outLs[['infVc']][5], 'Message: Converting sample and variable names to the standard R format')
     
-    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses')
+    checkEquals(outLs[['infVc']][7], 'Warning: The sample and/or variable names or orders from the input tables have been modified')
 
     checkEquals(colnames(outLs[['datMN']])[2], 'X3072')
 

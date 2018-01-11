@@ -48,7 +48,7 @@
       <output name="information">
           <assert_contents>
             <has_text text="Message: Converting sample and variable names to the standard R format" />
-	    <has_text text="Warning: The sample and/or variable names or orders from the input tables have been modified (see the information file for details); please use the new output tables (which have a correct format) for your analyses" />
+	    <has_text text="Warning: The sample and/or variable names or orders from the input tables have been modified" />
           </assert_contents>
       </output>
       <output name="dataMatrix_out" file="output-dataMatrix.tsv"/>
@@ -112,7 +112,7 @@ Output files
 ------------
 
 dataMatrix_out.tabular
-| dataMatrix data file with the transformed intensity values
+| dataMatrix data file; may be identical to the input dataMatrix in case no renaming of sample/variable names nor re-ordering of samples/variables (see the 'information' file for the presence/absence of modifications)
 | 
 
 dataMatrix_out.tabular
