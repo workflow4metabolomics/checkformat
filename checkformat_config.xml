@@ -57,7 +57,7 @@
 	  <has_text text="2569204.924" />
 	</assert_contents>
       </output>
-      <output name="dataMatrix_out" file="output-dataMatrix.tsv"/>
+      <!-- <output name="dataMatrix_out" file="output-dataMatrix.tsv"/> -->
     </test>
   </tests>
   
