@@ -1,5 +1,5 @@
-Checking the formats of the dataMatrix, sampleMetadata, and variableMetadata files  
-==================================================================================
+Checking/formatting the sample and variable names of the dataMatrix, sampleMetadata, and variableMetadata files  
+===============================================================================================================  
 
 A Galaxy module from the [Workflow4metabolomics](http://workflow4metabolomics.org) infrastructure  
 

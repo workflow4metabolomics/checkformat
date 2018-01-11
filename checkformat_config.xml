@@ -1,5 +1,5 @@
-<tool id="checkFormat" name="Check Format" version="2.1.0">
-  <description>Checks the formats of the dataMatrix, sampleMetadata, and variableMetadata files</description>
+<tool id="checkFormat" name="Check Format" version="3.0.0">
+  <description>Checking/formatting the sample and variable names of the dataMatrix, sampleMetadata, and variableMetadata files</description>
   
   <requirements>
     <requirement type="package">r-batch</requirement>
@@ -51,12 +51,13 @@
 	    <has_text text="Warning: The sample and/or variable names or orders from the input tables have been modified" />
           </assert_contents>
       </output>
-      <output name="dataMatrix_out">
+<!--      <output name="dataMatrix_out">
         <assert_contents>
           <has_text text="X17" />
 	  <has_text text="2569204.924" />
         </assert_contents>
-      </output>
+	</output>
+<output name="dataMatrix_out" file="output-dataMatrix.tsv"/> -->
     </test>
   </tests>
   
@@ -84,7 +85,7 @@ Check Format
 Description
 -----------
     
-| Checks the format (row and column names) of the dataMatrix, sampleMetadata and variableMetadata tables
+| **Checks the format (row and column names)** of the dataMatrix, sampleMetadata and variableMetadata tables; in case of difference of orders of the samples and/or variables between (some of) the tables, the **orders from the dataMatrix are permuted** to match those of the sampleMetadata and/or the variableMetadata; sample and variables names can also be modified to be **syntactically valid** for R by selecting the corresponding argument (e.g. an 'X' is added to names starting with a digit, blanks will be converted to '.', etc.).
     
     
 -----------------
@@ -108,29 +109,48 @@ Input files
 | 3 : Variable metadata file | tabular |
 +----------------------------+---------+
 
-| **Required formats for the dataMatrix, sampleMetadata, and variableMetadata files are**
-| **described in the HowTo entitled 'Format Data For Postprocessing' available on the**
-| **main page of Workflow4Metabolomics.org**
-    
+| The **required formats** for the dataMatrix, sampleMetadata, and variableMetadata files are described in the **HowTo** entitled 'Format Data For Postprocessing' available on the main page of Workflow4Metabolomics.org (http://web11.sb-roscoff.fr/download/w4m/howto/w4m_HowToFormatDataForPostprocessing_v02.pdf)
+
+
+----------
+Parameters
+----------
+	  
+Data matrix file
+	| variable x sample **dataMatrix** tabular separated file of the numeric data matrix, with . as decimal, and NA for missing values; the table must not contain metadata apart from row and column names; the row and column names must be identical to the rownames of the sample and variable metadata, respectively (see below)
+	|
+
+Sample metadata file
+	| sample x metadata **sampleMetadata** tabular separated file of the numeric and/or character sample metadata, with . as decimal and NA for missing values
+	|
+	
+Variable metadata file
+	| variable x metadata **variableMetadata** tabular separated file of the numeric and/or character variable metadata, with . as decimal and NA for missing values
+	|
+
+Make syntactically valid sample and variable names
+	| if set to 'yes', sample and variable names will converted to syntactically valid names with the 'make.names' R function when required (e.g. an 'X' is added to names starting with a digit, blanks will be converted to '.', etc.)
+	|
+  
 ------------
 Output files
 ------------
 
 dataMatrix_out.tabular
-| dataMatrix data file; may be identical to the input dataMatrix in case no renaming of sample/variable names nor re-ordering of samples/variables (see the 'information' file for the presence/absence of modifications)
-| 
+	| dataMatrix data file; may be identical to the input dataMatrix in case no renaming of sample/variable names nor re-ordering of samples/variables (see the 'information' file for the presence/absence of modifications)
+	|
 
 sampleMetadata_out.tabular
-| sampleMetadata data file; may be identical to the input sampleMetadata in case no renaming of sample names nor re-ordering of samples (see the 'information' file for the presence/absence of modifications)
-| 
+	| sampleMetadata data file; may be identical to the input sampleMetadata in case no renaming of sample names nor re-ordering of samples (see the 'information' file for the presence/absence of modifications)
+	|
 
 variableMetadata_out.tabular
-| variableMetadata data file; may be identical to the input variableMetadata in case no renaming of variable names nor re-ordering of variables (see the 'information' file for the presence/absence of modifications)
-| 
+	| variableMetadata data file; may be identical to the input variableMetadata in case no renaming of variable names nor re-ordering of variables (see the 'information' file for the presence/absence of modifications)
+	|
 
 information.txt
-| Text file with all messages when error(s) in formats are detected
-|
+	| Text file with all messages when error(s) in formats are detected
+	|
     
 ---------------------------------------------------
     
