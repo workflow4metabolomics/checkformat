@@ -51,13 +51,6 @@
 	  <has_text text="Warning: The sample and/or variable names or orders from the input tables have been modified" />
         </assert_contents>
       </output>
-      <output name="dataMatrix_out">
-	<assert_contents>
-	  <has_text text="X17" />
-	  <has_text text="2569204.924" />
-	</assert_contents>
-      </output>
-      <!-- <output name="dataMatrix_out" file="output-dataMatrix.tsv"/> -->
     </test>
   </tests>
   
