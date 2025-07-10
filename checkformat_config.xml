@@ -9,7 +9,7 @@
     <exit_code range="1:" level="fatal" />
   </stdio>
   
-  <command><![CDATA[
+  <command detect_errors="aggressive"><![CDATA[
   Rscript $__tool_directory__/checkformat_wrapper.R
   dataMatrix_in "$dataMatrix_in"
   sampleMetadata_in "$sampleMetadata_in"
